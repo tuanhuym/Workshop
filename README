@@ -1,0 +1,19 @@
+#include<stdio.h>
+#define pa 9000000
+#define pd 3600000
+int main(){
+	long long n, tf, ti, income, it;
+	printf("Your income of this year:");
+	scanf("%d",&income);
+	printf("Number of dependent:");
+	scanf("%d",&n);
+	tf = 12*(pa + n*pd);
+	printf("Tax-free income:%d",tf);
+	ti = (income < tf)?  0 :  income - tf;
+	printf("\nTaxable income: %d",ti);	
+	if(ti<=5000000) it=(5*ti)/100;
+	else if(5000000<ti&&ti<=10000000) it=(10*(ti-5000000))/100 + (5000000*5/100);
+	else if(10000000<ti&&ti<18000000) it=(10*(ti-10000000))/100 + (5000000*5/100) + (5000000*10/100);
+	else if(ti>18000000) it=(20*(ti-18000000)/100) + (5000000*5/100) + (5000000*10/100) + (8000000*15/100) ;
+	printf("\nIncome tax:%d", it);
+}
