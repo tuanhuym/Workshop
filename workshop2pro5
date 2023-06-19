@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
-main() {
+int main() {
 	char ch;
 	int nVowels = 0, nConsonants = 0, nOthers = 0;
 	do{
