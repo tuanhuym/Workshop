@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+	int x,y;
+	do{
+		printf("x va y:");
+		scanf("%d%d",&x,&y);
+		int tam=x;
+		x=y;
+		y=tam;	
+		printf("x=%d y=%d\n",x,y);
+	}
+	while(x!=0&&y!=0);
+}
