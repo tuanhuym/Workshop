@@ -1,0 +1,16 @@
+#include<stdio.h>
+void getRelPos ( double x, double y, double r){
+	double d=x*x+ y*y;
+	double r2=r*r;
+	if(d<r2) printf("the point is in the circle");
+	else if(d==r2) printf("the point is on the circle ");
+	else printf("the point is out of the circle ");
+}
+int main(){
+	double x,y,r;
+	printf("Input the point:");
+	scanf("%lf%lf",&x,&y);
+	printf("Radius:");
+	scanf("%lf",&r);
+	getRelPos(x,y,r);
+}
