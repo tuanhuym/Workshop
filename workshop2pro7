@@ -12,4 +12,4 @@ int main() {
 	printf("%d\n", d);
 	for (d = c1; d <= c2; d++)
 		printf("%5c, %5d, %5o, %5X\n", d, d, d, d);
-} 
+}  
