@@ -1,0 +1,26 @@
+#include<stdio.h>
+void minmax(int n){
+	int digit;
+	int min, max;
+	digit=n%10;
+	n=n/10;
+	min=max=digit;
+	do{
+		digit=n%10;
+		n=n/10;
+		if(max<digit) max=digit;
+		if(min>digit) min=digit;
+	}
+	while(n>0);
+	printf("min=%d, max=%d",min,max);
+}
+int main(){
+	int n;
+	do{
+		printf("n=");
+		scanf("%d",&n);
+		minmax(n);
+	}
+	while(n<0);
+	
+}
