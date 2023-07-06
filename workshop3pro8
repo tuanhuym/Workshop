@@ -1,0 +1,19 @@
+#include <stdio.h>
+double makeDouble(int  ipart, int fraction){
+    double d_f = fraction;
+    while (d_f >= 1) d_f /= 10; 
+    if (ipart < 0) return ipart - d_f;
+    return ipart + d_f ;
+}
+
+int main(){
+    int ipart, fraction;
+    printf("Integer part : ");
+    scanf("%d", &ipart);
+    do {
+        printf("Fraction: ");
+        scanf("%d", &fraction);
+        if (fraction < 0) printf("Fraction error\n");
+    }while (fraction < 0);
+    printf("Value=%lf", makeDouble(ipart, fraction));
+}
