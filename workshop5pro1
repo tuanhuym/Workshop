@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int Random(int min,int max){
+	return ( min + rand() % (max- min + 1));
+
+}
+int main(){
+	srand(time(NULL));
+	int x,y,count,total;
+	do{
+		printf("Total:");
+		scanf("%d",&total);
+	}
+	while(total<2||total>12);
+	count=1;
+	do{
+		x=Random(1,6);
+		y=Random(1,6);
+		printf("Result of throw %d :%d + %d\n", count, x, y);
+		count++;
+	}
+	while(x+y!=total);
+	printf("You got your total in %d throws!", count-1);
+
+}
