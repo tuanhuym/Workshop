@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include <math.h>
+void function1(){
+    float a,b,c;
+    printf("a*x^2 + b*x +c = 0 \n");
+    printf("a=");
+    scanf("%f",&a);
+    printf("b=");
+    scanf("%f",&b);
+    printf("c=");
+    scanf("%f",&c);
+    if(a==0){
+    	if(b!=0&&c==0) printf("x=0\n");
+    	if(b==0&&c!=0) printf("vo nghiem\n");
+    	if(b==0&&c==0) printf("vo so nghiem\n");
+    	if(b!=0&&c!=0) printf("x=%f\n",-c/b);	
+	}
+	else{
+		int delta;
+		delta = b*b - 4*a*c;
+		if (delta < 0) printf("vo nghiem\n");
+		else if (delta == 0)
+				{				
+					printf("X1=X2=%f\n", -b/(2*a) );
+				}
+	    else 
+				{
+					printf("co 2 nghiem \n"); 
+					printf("X1 =%f \n", (- b - sqrt(delta) )/(2*a));									
+					printf("X2 =%f \n", (- b + sqrt(delta) )/(2*a));
+				}
+	}
+}
+void function2(){
+	double d,r,y,amount;
+	do{
+	printf("Input deposit, rate,year:");
+	scanf("%lf%lf%lf",&d,&r,&y);
+	
+		if(d<=0) printf("deposit must be a positive number\n");
+		if(r>0.1||r<=0) printf("rate error\n");
+		if(y<=0) printf("year must be a positive number\n");		
+	}
+	while(d<=0||r>0.1||r<=0||y<=0);
+	amount=d*pow((1+r),y);
+	printf("%f",amount);
+}
+int main(){
+	int n;
+	printf("1- Quadratic equation \n");
+	printf("2- Bank deposit problem\n");
+	printf("3- Quit\n");
+	printf("userchoice:");
+	scanf("%d",&n);
+	switch(n){
+		case 1:function1(); break;
+		case 2:function2(); break;
+		case 3: printf("baibai"); break;
+		default:printf("error");
+	}
+}
