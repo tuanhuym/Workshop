@@ -31,11 +31,15 @@ void function2(){
 }
 int main(){
 	int n;
+	printf("1- Processing date data\n");
+	printf("2- Character data\n");
+	printf("3- Quit\n");
 	printf("userchoice:");
 	scanf("%d",&n);
 	switch(n){
 		case 1:function1(); break;
 		case 2:function2(); break;
+		case 3: printf("baibai"); break;
 		default:printf("error");
 	}
 }
