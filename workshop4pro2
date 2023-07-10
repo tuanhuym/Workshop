@@ -1,0 +1,49 @@
+#include<stdio.h>
+int isFibonacci (int n) 
+{    int t1=1, t2=1, f=1;
+   if (n==1) return 1;
+   while (f<n)
+   {   f= t1 + t2;
+       t1=t2;
+       t2=f;
+   }  
+   if(f==n) return 1;
+}
+void function1(){
+	int n;
+	printf("n=");
+	scanf("%d",&n);
+	if(isFibonacci(n)==1) printf("It is a Fibonacci element.");
+    else printf("It is not a Fibonacci element.");
+}
+int validDate( int d, int m, int y) 
+{
+	int maxd = 31; 
+    	if (d< 1||d>31||m< 1||m>12||y<1) return 0;
+    	if (m==4||m==6||m==9||m==11) maxd = 30;
+    	else if (m==2) 
+            maxd=(y%400==0||(y%4==0&&y%100!= 0))?29:28;
+        if(d<=maxd) return 1;    
+     
+}
+void function2(){
+	int d, m, y;
+    printf("Input day, month, year:");
+    scanf("%d %d %d", &d, &m, &y);
+    if(validDate(d,m,y)==1) printf("valid date");
+    else printf("invalid date");
+}
+int main(){
+	int n;
+	printf("1-Fibonacci sequence\n");
+	printf("2-Check a date\n");
+	printf("3-Quit\n");
+	printf("Your Choice:");
+	scanf("%d",&n);
+	switch(n){
+		case 1:function1();break;
+		case 2:function2();break;
+		case 3:printf("baibai");break;
+		default:printf("error");
+	}
+}
